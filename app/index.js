@@ -1,2 +1,5 @@
-console.log('Hola')
-console.log('hello in the browser')
+function test(){
+    document.getElementById("userName").innerHTML = "Josema"
+}
+
+test()
