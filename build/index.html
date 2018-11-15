@@ -5,18 +5,20 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="index.css">
     <title>To Do</title>
-    <!-- Compiled and minified JavaScript -->
-
 </head>
 
 <body>
 
     <div id="mySidenav" class="sidenav">
         <p id="userName"></p>
-        <a href="./tasks.html">Tasks</a>
-        <a href="./contact.html">Contact</a>
+        <a href="javascript:void(0);" id="tasksId" onClick="">Tasks</a>
+        <a href="javascript:void(0);" id="contactId" onClick="">Contact</a>
+        <script type="text/javascript" language="javascript" src="bundle.js"></script>
     </div>
-    <script type="text/javascript" src="bundle.js"></script>
+
+    
+    <div id="showBody" class="main">
+    </div>
 
 </body>
 
