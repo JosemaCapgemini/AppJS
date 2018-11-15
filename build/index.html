@@ -5,6 +5,19 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="index.css">
     <title>To Do</title>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCxsIc16iDFxHoNl5PBg_1pO1bGKpL9ymQ",
+            authDomain: "appjs-817e8.firebaseapp.com",
+            databaseURL: "https://appjs-817e8.firebaseio.com",
+            projectId: "appjs-817e8",
+            storageBucket: "appjs-817e8.appspot.com",
+            messagingSenderId: "233155095342"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script type="text/javascript" language="javascript" src="bundle.js"></script>
 </head>
 
@@ -17,9 +30,8 @@
     </div>
 
     <div id="bodyOn" class="main">
-        
-    </div>
 
+    </div>
 
     <script>
         function setUserName() {
