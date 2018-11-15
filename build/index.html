@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="index.css">
     <title>To Do</title>
+    <script type="text/javascript" language="javascript" src="bundle.js"></script>
 </head>
 
 <body>
@@ -13,13 +14,19 @@
         <p id="userName"></p>
         <a href="javascript:void(0);" id="tasksId" onClick="">Tasks</a>
         <a href="javascript:void(0);" id="contactId" onClick="">Contact</a>
-        <script type="text/javascript" language="javascript" src="bundle.js"></script>
     </div>
 
-    
-    <div id="showBody" class="main">
+    <div id="bodyOn" class="main">
+        
     </div>
 
+
+    <script>
+        function setUserName() {
+            document.getElementById("userName").innerHTML = "User"
+        }
+        setUserName()
+    </script>
 </body>
 
 </html>
