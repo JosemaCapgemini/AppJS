@@ -11,7 +11,6 @@ function selectTag(tag) {
     }
 }
 
-
 window.onload = function () {
     document.getElementById("tasksId").onclick = function taskEventController() {
         selectTag('tasks')
@@ -22,8 +21,6 @@ window.onload = function () {
     }
 }
 
-
-
 function appendHTML() {
     document.getElementById("bodyOn").innerHTML = "\
     <table>\
@@ -32,5 +29,4 @@ function appendHTML() {
             <th>Favorite Color</th>\
         </tr>\
     </table>"
-
 }

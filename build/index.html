@@ -2,43 +2,49 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <title>To Do</title>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <script>
-        // Initialize Firebase
+    <script> 
         var config = {
-            apiKey: "AIzaSyCxsIc16iDFxHoNl5PBg_1pO1bGKpL9ymQ",
-            authDomain: "appjs-817e8.firebaseapp.com",
-            databaseURL: "https://appjs-817e8.firebaseio.com",
-            projectId: "appjs-817e8",
-            storageBucket: "appjs-817e8.appspot.com",
-            messagingSenderId: "233155095342"
-        };
-        firebase.initializeApp(config);
+        apiKey: "AIzaSyCxsIc16iDFxHoNl5PBg_1pO1bGKpL9ymQ",
+        authDomain: "appjs-817e8.firebaseapp.com",
+        databaseURL: "https://appjs-817e8.firebaseio.com",
+        projectId: "appjs-817e8",
+        storageBucket: "appjs-817e8.appspot.com",
+        messagingSenderId: "233155095342"
+      }
+      firebase.initializeApp(config);
     </script>
-    <script type="text/javascript" language="javascript" src="bundle.js"></script>
+    <script type="text/javascript" language="javascript" src="index.js"></script>
 </head>
 
-<body>
+<div class="form">
 
-    <div id="mySidenav" class="sidenav">
-        <p id="userName"></p>
-        <a href="javascript:void(0);" id="tasksId" onClick="">Tasks</a>
-        <a href="javascript:void(0);" id="contactId" onClick="">Contact</a>
-    </div>
+    <div class="tab-content">
+        <div>
+            <h1>Sign Up</h1>
+            <div>
+                <div class="field-wrap">
+                    <label>
+                        Email Address<span class="req">*</span>
+                    </label>
+                    <input type="email" id="email" required autocomplete="off" />
+                </div>
 
-    <div id="bodyOn" class="main">
+                <div class="field-wrap">
+                    <label>
+                        Password<span class="req">*</span>
+                    </label>
+                    <input type="password" id="password" required autocomplete="off" />
+                </div>
 
-    </div>
+                <button type="submit" id="validateLogin" onClick="validation()" class="button button-block">Get Started</button>
 
-    <script>
-        function setUserName() {
-            document.getElementById("userName").innerHTML = "User"
-        }
-        setUserName()
-    </script>
-</body>
+            </div>
+
+        </div>
+
+    </div><!-- tab-content -->
+
+</div> <!-- /form -->
 
 </html>
