@@ -17,3 +17,13 @@ function validation(){
 }
 
 
+function userRegister(){
+    var email = document.getElementById("emailRegister").value
+    var password = document.getElementById("passwordRegister").value
+
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage)
+      });
+}
