@@ -2,18 +2,18 @@
 <html>
 
 <head>
-    <link href="index.css" type="text/css" rel="stylesheet"/>
+    <link href="index.css" type="text/css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <script> 
+    <script>
         var config = {
-        apiKey: "AIzaSyCxsIc16iDFxHoNl5PBg_1pO1bGKpL9ymQ",
-        authDomain: "appjs-817e8.firebaseapp.com",
-        databaseURL: "https://appjs-817e8.firebaseio.com",
-        projectId: "appjs-817e8",
-        storageBucket: "appjs-817e8.appspot.com",
-        messagingSenderId: "233155095342"
-      }
-      firebase.initializeApp(config);
+            apiKey: "AIzaSyCxsIc16iDFxHoNl5PBg_1pO1bGKpL9ymQ",
+            authDomain: "appjs-817e8.firebaseapp.com",
+            databaseURL: "https://appjs-817e8.firebaseio.com",
+            projectId: "appjs-817e8",
+            storageBucket: "appjs-817e8.appspot.com",
+            messagingSenderId: "233155095342"
+        }
+        firebase.initializeApp(config);
     </script>
     <script type="text/javascript" language="javascript" src="index.js"></script>
 </head>
@@ -29,6 +29,9 @@
                 <p><input type="submit" onClick="validation()" value="LOGIN"></p>
             </div>
         </div>
+
+        <p class="errorLog" id="errorLogin"></p>
+
         <br>
         <br>
         <br>
@@ -40,9 +43,11 @@
                 <p><input type="password" id="passwordRegister" placeholder="**********"></p>
                 <p><input type="submit" onClick="userRegister()" value="SIGNUP"></p>
             </div>
-        </div> 
+        </div>
 
     </div>
+
+    <p class="errorLog" id="errorSignUp"></p>
 </body>
 
 </html>
