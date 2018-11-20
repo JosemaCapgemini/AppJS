@@ -1,3 +1,9 @@
+firebase.auth().onAuthStateChanged(function (user) {
+    document.getElementById("userName").innerHTML = user['email']
+});
+
+
+
 function selectTag(tag) {
     if (tag == 'tasks') {
         document.getElementById("tasksId").style.backgroundColor = "black"
@@ -36,3 +42,35 @@ function appendHTMLContact() {
         </tr>\
     </table>"
 }
+
+
+// ------------------------------------------------------------------------------------------------------------
+
+var vue = new Vue({
+    el: '#app',
+    data: {
+      formOpen: false,
+      productData: {
+        title: '',
+        rating: '',
+        price: '',
+        list_price: '',
+        is_featured: false
+      }
+    },
+    methods: {
+      resetForm: function () {
+        this.productData = {
+          title: '',
+          rating: '',
+          price: '',
+          list_price: '',
+          is_featured: false
+        }
+      },
+      cancel: function() {
+        this.formOpen = false;
+        this.resetForm();
+      }
+    }
+  })

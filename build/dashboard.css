@@ -40,30 +40,46 @@
 }
 
 
-.main {
-  display:table;
-  margin-left: 200px; /* Same as the width of the sidenav */
-  height: 100%;
-  /* position: absolute; */
-  padding-left: 10px;
+
+
+.container {
+  background-image: linear-gradient(-128deg, rgba(255, 181, 32, 0.93) 3%, rgba(239, 39, 153, 0.93) 88%, rgba(237, 18, 171, 0.93) 100%);
+  display: flex;
   width: 100%;
-  right: 0;
-  bottom: 0;
-  background-color: #5c5c33;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 20px;
+.submit-button {
+  display: block;
+  background-color: #3498DB;
+  height: 40px;
+  border-radius: 20px;
+  line-height: 36px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.875em;
+  border: none;
+  font-weight: 700;
+  padding: 0 34px;
+  margin: 0 auto;
+  img {
+    position: relative;
+    top: 3px;
+    right: 6px;
+  }
+  &:hover {
+    background-color: darken(#3498DB, 10%);
+    cursor: pointer;
+  }
 }
 
-.buttonProjects {border-radius: 20px;}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
