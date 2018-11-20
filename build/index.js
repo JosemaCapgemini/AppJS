@@ -1,4 +1,3 @@
-
 function validation(){
 
     var email = document.getElementById("email").value
@@ -27,5 +26,5 @@ function userRegister(){
         var errorMessage = error.message;
 
         document.getElementById("errorSignUp").innerHTML = errorMessage
-      });
+      })
 }

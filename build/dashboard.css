@@ -51,3 +51,19 @@
   bottom: 0;
   background-color: #5c5c33;
 }
+
+
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.buttonProjects {border-radius: 20px;}

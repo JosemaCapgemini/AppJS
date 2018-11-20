@@ -1,10 +1,10 @@
 const path = require('path')
 
 module.exports = {
-    entry: path.resolve(__dirname, 'app'),
+    entry: path.resolve(__dirname, 'build'),
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'build.js'
     },
     devServer: {
         port: 3000,
