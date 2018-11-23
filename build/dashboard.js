@@ -1,43 +1,48 @@
 firebase.auth().onAuthStateChanged(function (user) {
-    document.getElementById("userName").innerHTML = user['email']
-});
+	document.getElementById("userName").innerHTML = user['email']
+})
+
 
 function selectTag(tag) {
-    if (tag == 'tasks') {
-        document.getElementById("tasksId").style.backgroundColor = "black"
-        document.getElementById("contactId").style.backgroundColor = "transparent"
-        appendHTMLTasks()
-    }
-    else if (tag == 'contact') {
-        document.getElementById("contactId").style.background = "black"
-        document.getElementById("tasksId").style.backgroundColor = "transparent"
-        appendHTMLContact()
-    }
+	if (tag == 'tasks') {
+		document.getElementById("tasksId").style.backgroundColor = "black"
+		document.getElementById("contactId").style.backgroundColor = "transparent"
+		appendHTMLTasks()
+	}
+	else if (tag == 'contact') {
+		document.getElementById("contactId").style.background = "black"
+		document.getElementById("tasksId").style.backgroundColor = "transparent"
+		appendHTMLContact()
+	}
 }
 
 window.onload = function () {
-    document.getElementById("tasksId").onclick = function taskEventController() {
-        selectTag('tasks')
-    }
+	document.getElementById("tasksId").onclick = function taskEventController() {
+		selectTag('tasks')
+	}
 
-    document.getElementById("contactId").onclick = function ContactEventController() {
-        selectTag('contact')
-    }
+	document.getElementById("contactId").onclick = function ContactEventController() {
+		selectTag('contact')
+	}
 }
 
 function appendHTMLTasks() {
-    document.getElementById("buttonsId").innerHTML = "\
-    <button type='submit' class='button'>ADD PROJECT +</button>"
+	document.getElementById("buttonsId").innerHTML = "\
+	<button type='submit' class='button'>ADD PROJECT +</button>"
 
-    document.getElementById("bottomContainer").innerHTML = ""
+	document.getElementById("bottomContainer").innerHTML = ""
 
-
+	document.getElementById("buttonsId").addEventListener("click", function(){
+		//Hide the button 'ADD PROJECT +'
+		document.getElementById("buttonsId").innerHTML = ""
+		showAddProject();
+	});
 }
 
 function appendHTMLContact() {
-    document.getElementById("buttonsId").innerHTML = ""
+	document.getElementById("buttonsId").innerHTML = ""
 
-    document.getElementById("bottomContainer").innerHTML = "\
+	document.getElementById("bottomContainer").innerHTML = "\
     <div class='container-contact100'>\
 		<div class='wrap-contact100'>\
 			<form class='contact100-form'>\
@@ -78,4 +83,27 @@ function appendHTMLContact() {
 	</div>"
 }
 
-    
+function showAddProject(){
+	document.getElementById("bottomContainer").innerHTML = "\
+	<input class='inputFile' type='file' onchange='previewFile()' id='files' name='files[]' multiple/>\
+	<p id='fileUpload'></p>\
+	<p id='downloadFile'></p>"
+}
+
+
+function previewFile(){
+	var storage = firebase.storage();
+  
+	var file = document.getElementById("files").files[0];
+	  console.log(file);
+	
+	var storageRef = firebase.storage().ref();
+	
+	//dynamically set reference to the file name
+	var thisRef = storageRef.child(file.name);
+  
+	//put request upload file to firebase storage
+	thisRef.put(file).then( function(snapshot) {
+	  document.getElementById('fileUpload').innerHTML = 'Uploaded a blob or file!'
+  	});
+}
